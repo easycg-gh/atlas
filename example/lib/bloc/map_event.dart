@@ -13,7 +13,7 @@ abstract class MapEvent extends Equatable {
 class MapCameraPositionChanged extends MapEvent {
   final CameraPosition cameraPosition;
 
-  const MapCameraPositionChanged({@required this.cameraPosition});
+  const MapCameraPositionChanged({required this.cameraPosition});
 
   @override
   List<Object> get props => [cameraPosition];
@@ -23,7 +23,7 @@ class MapCameraPositionChanged extends MapEvent {
 class MapShowSearchAreaButtonChanged extends MapEvent {
   final bool showSearchAreaButton;
 
-  const MapShowSearchAreaButtonChanged({@required this.showSearchAreaButton});
+  const MapShowSearchAreaButtonChanged({required this.showSearchAreaButton});
 
   @override
   List<Object> get props => [showSearchAreaButton];

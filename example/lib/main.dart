@@ -29,7 +29,7 @@ class AtlasSample extends StatefulWidget {
 class _AtlasSampleState extends State<AtlasSample> {
   MapType mapType = MapType.normal;
 
-  AtlasController _controller;
+  AtlasController? _controller;
   final Set<Marker> _markers = Set<Marker>.from(
     [
       Marker(
@@ -76,7 +76,7 @@ class _AtlasSampleState extends State<AtlasSample> {
           body: Stack(
             children: [
               Atlas(
-                initialCameraPosition: state.defaultCameraPosition,
+                initialCameraPosition: state.defaultCameraPosition!,
                 markers: _markers,
                 showMyLocation: true,
                 showMyLocationButton: false,
@@ -118,7 +118,7 @@ class _AtlasSampleState extends State<AtlasSample> {
                   top: 50,
                 ),
                 child: Visibility(
-                  visible: state.showSearchAreaButton,
+                  visible: state.showSearchAreaButton!,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,

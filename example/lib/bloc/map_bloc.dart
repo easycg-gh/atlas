@@ -16,7 +16,7 @@ class MapBloc extends Bloc<MapEvent, MapState> {
         .where((event) => event is MapCameraPositionChanged)
         .debounceTime(Duration(milliseconds: 200));
     return super.transformEvents(
-        MergeStream([nonDebounceStream, debounceStream]), next);
+        MergeStream([nonDebounceStream, debounceStream]), next as Stream<Transition<MapEvent, MapState>> Function(MapEvent)) as Stream<MapState>;
   }
 
   @override
@@ -34,10 +34,10 @@ class MapBloc extends Bloc<MapEvent, MapState> {
       MapCameraPositionChanged event) async* {
     yield state.copyWith(newDefaultCameraPosition: event.cameraPosition);
     if ((event.cameraPosition.target.longitude !=
-                state.defaultCameraPosition.target.longitude &&
+                state.defaultCameraPosition!.target.longitude &&
             event.cameraPosition.target.latitude !=
-                state.defaultCameraPosition.target.latitude) ||
-        event.cameraPosition.zoom != state.defaultCameraPosition.zoom) {
+                state.defaultCameraPosition!.target.latitude) ||
+        event.cameraPosition.zoom != state.defaultCameraPosition!.zoom) {
       yield state.copyWith(showSearchAreaButton: true);
     }
   }

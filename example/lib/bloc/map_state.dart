@@ -2,8 +2,8 @@ import 'package:equatable/equatable.dart';
 import 'package:atlas/atlas.dart';
 
 class MapState extends Equatable {
-  final CameraPosition defaultCameraPosition;
-  final bool showSearchAreaButton;
+  final CameraPosition? defaultCameraPosition;
+  final bool? showSearchAreaButton;
 
   const MapState({
     this.defaultCameraPosition,
@@ -24,8 +24,8 @@ class MapState extends Equatable {
   }
 
   MapState copyWith({
-    CameraPosition newDefaultCameraPosition,
-    bool showSearchAreaButton,
+    CameraPosition? newDefaultCameraPosition,
+    bool? showSearchAreaButton,
   }) {
     return new MapState(
       defaultCameraPosition:
@@ -35,7 +35,7 @@ class MapState extends Equatable {
   }
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         defaultCameraPosition,
         showSearchAreaButton,
       ];
