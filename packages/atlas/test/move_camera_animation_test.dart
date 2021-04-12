@@ -27,7 +27,7 @@ main() {
     test('should throw assertion error if controller is null', () {
       try {
         MoveCameraAnimation(
-          controller: null,
+          controller: null!,
           panSequence: TweenSequence<LatLng>(
               [TweenSequenceItem(tween: MockLatLngTween(), weight: 100.0)]),
           zoomSequence: TweenSequence<double>(
@@ -43,7 +43,7 @@ main() {
       try {
         MoveCameraAnimation(
           controller: AnimationController(vsync: MockStateTicker()),
-          panSequence: null,
+          panSequence: null!,
           zoomSequence: TweenSequence<double>(
               [TweenSequenceItem(tween: MockDoubleTween(), weight: 100.0)]),
         );
@@ -59,7 +59,7 @@ main() {
           controller: AnimationController(vsync: MockStateTicker()),
           panSequence: TweenSequence<LatLng>(
               [TweenSequenceItem(tween: MockLatLngTween(), weight: 100.0)]),
-          zoomSequence: null,
+          zoomSequence: null!,
         );
         fail('should throw assertion error');
       } catch (error) {

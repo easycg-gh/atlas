@@ -10,8 +10,8 @@ class LatLng {
   final double longitude;
 
   const LatLng({
-    @required double latitude,
-    @required double longitude,
+    required double latitude,
+    required double longitude,
   })  : assert(latitude != null),
         assert(longitude != null),
         latitude =

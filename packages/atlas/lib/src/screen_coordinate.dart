@@ -11,8 +11,8 @@ class ScreenCoordinates {
   final int y;
 
   const ScreenCoordinates({
-    @required this.x,
-    @required this.y,
+    required this.x,
+    required this.y,
   })  : assert(x != null),
         assert(y != null);
 
@@ -20,7 +20,7 @@ class ScreenCoordinates {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other.runtimeType != runtimeType) return false;
-    final ScreenCoordinates typedOther = other;
+    final ScreenCoordinates typedOther = other as ScreenCoordinates;
     return x == typedOther.x && y == typedOther.y;
   }
 

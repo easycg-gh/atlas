@@ -11,7 +11,7 @@ class Polyline {
   final List<LatLng> points;
 
   /// The `Color` of the line
-  final Color color;
+  final Color? color;
 
   /// Width of the polyline, used to define the width of the line segment to be drawn.
   ///
@@ -37,8 +37,8 @@ class Polyline {
   final bool isDottedLine;
 
   const Polyline(
-      {@required this.id,
-      @required this.points,
+      {required this.id,
+      required this.points,
       this.color = Colors.black,
       this.width = 10,
       this.outlineColor = Colors.black,
@@ -51,7 +51,7 @@ class Polyline {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other.runtimeType != runtimeType) return false;
-    final Polyline typedOther = other;
+    final Polyline typedOther = other as Polyline;
     return id == typedOther.id &&
         points == typedOther.points &&
         color == typedOther.color &&

@@ -7,7 +7,7 @@ class MockProvider extends Mock implements Provider {}
 
 main() {
   group('Atlas', () {
-    Provider provider;
+    Provider? provider;
     final CameraPosition initialCameraPosition = CameraPosition(
       target: LatLng(
         latitude: 37.42796133580664,
@@ -29,7 +29,7 @@ main() {
               MaterialApp(
                 home: Scaffold(
                   body: Atlas(
-                    initialCameraPosition: null,
+                    initialCameraPosition: null!,
                   ),
                 ),
               ),
@@ -43,7 +43,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when no map markers are provided',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -68,7 +68,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -101,7 +101,7 @@ main() {
             ),
           ].toSet();
 
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: markers,
             callouts: Set<Callout>(),
@@ -127,7 +127,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: markers,
               callouts: Set<Callout>(),
@@ -147,7 +147,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when no map circles are provided',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -172,7 +172,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -203,7 +203,7 @@ main() {
             ),
           ].toSet();
 
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -229,7 +229,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -272,7 +272,7 @@ main() {
             ),
           ].toSet();
 
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -298,7 +298,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -333,7 +333,7 @@ main() {
             ),
           ].toSet();
 
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -359,7 +359,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -382,7 +382,7 @@ main() {
           final Function(LatLng) onTap = (LatLng position) {
             print('onTap ${position.latitude}, ${position.latitude}');
           };
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -409,7 +409,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -434,7 +434,7 @@ main() {
             print(
                 'onPoiTap ${poi.name}, ${poi.latLng.latitude}, ${poi.latLng.longitude}');
           };
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -461,7 +461,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -485,7 +485,7 @@ main() {
           final Function(LatLng) onLongPress = (LatLng position) {
             print('onLongPress ${position.latitude}, ${position.latitude}');
           };
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -512,7 +512,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -533,7 +533,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when showMyLocation is enabled',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -559,7 +559,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -579,7 +579,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when showMyLocation is not provided',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -604,7 +604,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -624,7 +624,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when showMyLocationButton is enabled',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -651,7 +651,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -671,7 +671,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when showMyLocationButton is not provided',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -696,7 +696,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -716,7 +716,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when mapType is supplied',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -741,7 +741,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -761,7 +761,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when showTraffic is enabled',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -787,7 +787,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -822,7 +822,7 @@ main() {
                 )),
           ].toSet();
 
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: markers,
             callouts: Set<Callout>(),
@@ -848,7 +848,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: markers,
               callouts: Set<Callout>(),
@@ -868,7 +868,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when followMyLocation is enabled',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -896,7 +896,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -919,7 +919,7 @@ main() {
           final Function(LatLng) onLocationChanged = (LatLng position) {
             print('onLocationChanged ${position.latitude}, ${position.latitude}');
           };
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -946,7 +946,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -967,7 +967,7 @@ main() {
     testWidgets(
         'should call provider build method with correct arguments when mapLanguage is provided',
             (WidgetTester tester) async {
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -996,7 +996,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -1018,7 +1018,7 @@ main() {
             (WidgetTester tester) async {
           final VoidCallback onPan = () {};
 
-          when(provider.build(
+          when(provider!.build(
             initialCameraPosition: initialCameraPosition,
             markers: Set<Marker>(),
             callouts: Set<Callout>(),
@@ -1045,7 +1045,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -1075,7 +1075,7 @@ main() {
           );
 
           when(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -1103,7 +1103,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -1127,7 +1127,7 @@ main() {
           final deviceLocationIconAsset = 'path-to-the-icon-asset';
 
           when(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -1155,7 +1155,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -1179,7 +1179,7 @@ main() {
           final country = 'Japan';
 
           when(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),
@@ -1207,7 +1207,7 @@ main() {
           );
           expect(find.byKey(mapKey), findsOneWidget);
           verify(
-            provider.build(
+            provider!.build(
               initialCameraPosition: initialCameraPosition,
               markers: Set<Marker>(),
               callouts: Set<Callout>(),

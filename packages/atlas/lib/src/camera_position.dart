@@ -12,7 +12,7 @@ class CameraPosition {
   final double zoom;
 
   const CameraPosition({
-    @required this.target,
+    required this.target,
     this.zoom = 0.0,
   }) : assert(target != null);
 }

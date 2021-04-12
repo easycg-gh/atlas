@@ -6,7 +6,7 @@ void main() {
     test('should thow AssertionError if x is null', () {
       try {
         ScreenCoordinates(
-          x: null,
+          x: null!,
           y: 1,
         );
         fail('should throw AssertionError');
@@ -19,7 +19,7 @@ void main() {
       try {
         ScreenCoordinates(
           x: 1,
-          y: null,
+          y: null!,
         );
         fail('should throw AssertionError');
       } catch (error) {

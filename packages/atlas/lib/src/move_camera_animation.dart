@@ -13,9 +13,9 @@ class MoveCameraAnimation {
   final TweenSequence<double> zoomSequence;
 
   MoveCameraAnimation(
-      {@required this.controller,
-      @required this.panSequence,
-      @required this.zoomSequence})
+      {required this.controller,
+      required this.panSequence,
+      required this.zoomSequence})
       : assert(controller != null),
         assert(panSequence != null),
         assert(zoomSequence != null);

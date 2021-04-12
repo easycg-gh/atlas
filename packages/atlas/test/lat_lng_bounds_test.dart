@@ -6,7 +6,7 @@ main() {
     test('should throw AssertionError if northeast is null', () {
       try {
         LatLngBounds(
-          northeast: null,
+          northeast: null!,
           southwest: LatLng(latitude: 0, longitude: 0),
         );
         fail('should throw AssertionError');
@@ -19,7 +19,7 @@ main() {
       try {
         LatLngBounds(
           northeast: LatLng(latitude: 0, longitude: 0),
-          southwest: null,
+          southwest: null!,
         );
         fail('should throw AssertionError');
       } catch (error) {

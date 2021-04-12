@@ -10,12 +10,12 @@ class Marker {
   final LatLng position;
 
   /// Optional MarkerIcon used to replace default icon
-  final MarkerIcon icon;
+  final MarkerIcon? icon;
 
   /// A `void Function` which is called whenever a `Marker` is tapped.
-  final void Function() onTap;
+  final void Function()? onTap;
 
-  final Annotation annotation;
+  final Annotation? annotation;
 
   /// The z-index of the marker, used to determine relative drawing order of
   /// map overlays.
@@ -23,14 +23,14 @@ class Marker {
   /// Lower values means drawn earlier, and thus appearing to be closer to the surface of the Earth.
   final double zIndex;
 
-  final Anchor anchor;
+  final Anchor? anchor;
 
   // Optional heading used to rotate the marker in degrees (eg. 0 to 360)
-  final int heading;
+  final int? heading;
 
   const Marker({
-    @required this.id,
-    @required this.position,
+    required this.id,
+    required this.position,
     this.onTap,
     this.annotation = const Annotation(),
     this.icon,
@@ -44,7 +44,7 @@ class Marker {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other.runtimeType != runtimeType) return false;
-    final Marker typedOther = other;
+    final Marker typedOther = other as Marker;
     return id == typedOther.id &&
         position == typedOther.position &&
         icon == typedOther.icon &&
@@ -88,14 +88,14 @@ class Anchor {
 
 /// Text labels for a [Marker] info window.
 class Annotation {
-  final String title;
+  final String? title;
 
-  final String subTitle;
+  final String? subTitle;
 
-  final MarkerIcon icon;
+  final MarkerIcon? icon;
 
   /// A `void Function` which is called whenever a `Marker info` is tapped.
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   final AnnotationType annotationType;
 
@@ -111,7 +111,7 @@ class Annotation {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other.runtimeType != runtimeType) return false;
-    final Annotation typedOther = other;
+    final Annotation typedOther = other as Annotation;
     return title == typedOther.title &&
         subTitle == typedOther.subTitle &&
         icon == typedOther.icon &&

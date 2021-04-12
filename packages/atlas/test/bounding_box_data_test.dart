@@ -9,7 +9,7 @@ main() {
       () {
         try {
           BoundingBoxData(
-            bounds: null,
+            bounds: null!,
           );
           fail('should throw AssertionError');
         } catch (error) {

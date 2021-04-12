@@ -8,13 +8,13 @@ class BoundingBoxData {
   final LatLngBounds bounds;
 
   /// Optional 2D rectangle based on a Origin and Size `Rectangle2D`
-  final Rectangle2D rectangle2d;
+  final Rectangle2D? rectangle2d;
 
   /// Optional padding that should be applied to the bounding box
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
 
   BoundingBoxData({
-    @required this.bounds,
+    required this.bounds,
     this.rectangle2d,
     this.padding,
   }) : assert(bounds != null);

@@ -7,7 +7,7 @@ main() {
     test('should throw AssertionError if id is null', () {
       try {
         Polygon(
-          id: null,
+          id: null!,
           points: [
             LatLng(
               latitude: 48.133,
@@ -37,7 +37,7 @@ main() {
       try {
         Polygon(
           id: 'id',
-          points: null,
+          points: null!,
         );
         fail('should throw AssertionError');
       } catch (error) {
@@ -59,7 +59,7 @@ main() {
         )
       ];
 
-      final expectedColor = null;
+      final dynamic expectedColor = null;
 
       final polygon = Polygon(
         id: expectedId,

@@ -5,7 +5,7 @@ main() {
   group('DeviceLocation', () {
     test('should throw AssertionError if target is null', () {
       try {
-        DeviceLocation(target: null);
+        DeviceLocation(target: null!);
         fail('should throw AssertionError');
       } catch (error) {
         expect(error, isAssertionError);

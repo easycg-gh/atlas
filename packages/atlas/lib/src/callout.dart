@@ -10,13 +10,13 @@ class Callout {
   final LatLng position;
 
   /// The type of annotation of the `Callout`
-  final AnnotationType annotationType;
+  final AnnotationType? annotationType;
 
   /// Optional MarkerIcon used to replace default icon
-  final MarkerIcon icon;
+  final MarkerIcon? icon;
 
   /// List of information of the `Callout`
-  final List<String> texts;
+  final List<String>? texts;
 
   /// The z-index of the callout, used to determine relative drawing order of
   /// map overlays.
@@ -25,8 +25,8 @@ class Callout {
   final double zIndex;
 
   const Callout({
-    @required this.id,
-    @required this.position,
+    required this.id,
+    required this.position,
     this.annotationType,
     this.icon,
     this.zIndex = 0.0,
@@ -38,7 +38,7 @@ class Callout {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other.runtimeType != runtimeType) return false;
-    final Callout typedOther = other;
+    final Callout typedOther = other as Callout;
     return id == typedOther.id &&
         position == typedOther.position &&
         icon == typedOther.icon &&

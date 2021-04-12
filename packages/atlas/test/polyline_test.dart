@@ -7,7 +7,7 @@ main() {
     test('should throw AssertionError if id is null', () {
       try {
         Polyline(
-          id: null,
+          id: null!,
           points: [
             LatLng(
               latitude: 38.7439498,
@@ -30,7 +30,7 @@ main() {
       try {
         Polyline(
           id: 'id',
-          points: null,
+          points: null!,
         );
         fail('should throw AssertionError');
       } catch (error) {
@@ -51,7 +51,7 @@ main() {
         )
       ];
 
-      final expectedColor = null;
+      final dynamic expectedColor = null;
 
       final polyline = Polyline(
         id: expectedId,

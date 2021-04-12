@@ -3,11 +3,11 @@ import 'package:flutter/foundation.dart';
 
 class DeviceLocation {
   final LatLng target;
-  final double accuracy;
+  final double? accuracy;
   final double altitude;
 
   const DeviceLocation({
-    @required this.target,
+    required this.target,
     this.accuracy = 0.0,
     this.altitude = 0.0,
   }) : assert(target != null);
@@ -16,7 +16,7 @@ class DeviceLocation {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other.runtimeType != runtimeType) return false;
-    final DeviceLocation typedOther = other;
+    final DeviceLocation typedOther = other as DeviceLocation;
     return runtimeType == typedOther.runtimeType &&
         target == typedOther.target &&
         accuracy == typedOther.accuracy &&

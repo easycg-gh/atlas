@@ -7,7 +7,7 @@ main() {
     test('should throw AssertionError if id is null', () {
       try {
         Circle(
-          id: null,
+          id: null!,
           center: LatLng(
             latitude: 38.7439498,
             longitude: -9.1490721,
@@ -25,7 +25,7 @@ main() {
       try {
         Circle(
           id: 'id',
-          center: null,
+          center: null!,
           radiusInMeters: 0.0,
         );
 
@@ -43,7 +43,7 @@ main() {
             latitude: 38.7439498,
             longitude: -9.1490721,
           ),
-          radiusInMeters: null,
+          radiusInMeters: null!,
         );
 
         fail('should throw AssertionError');
@@ -59,7 +59,7 @@ main() {
         longitude: -9.1490721,
       );
       final expectedRadius = 10.0;
-      final expectedFillColor = null;
+      final dynamic expectedFillColor = null;
 
       final circle = Circle(
         id: expectedId,
@@ -103,7 +103,7 @@ main() {
         longitude: -9.1490721,
       );
       final expectedRadius = 10.0;
-      final expectedStrokeColor = null;
+      final dynamic expectedStrokeColor = null;
 
       final circle = Circle(
         id: expectedId,
@@ -147,7 +147,7 @@ main() {
         longitude: -9.1490721,
       );
       final expectedRadius = 10.0;
-      final expectedZIndex = null;
+      final dynamic expectedZIndex = null;
 
       final circle = Circle(
         id: expectedId,

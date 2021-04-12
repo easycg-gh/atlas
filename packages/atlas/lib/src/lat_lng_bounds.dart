@@ -14,8 +14,8 @@ class LatLngBounds {
   final LatLng southwest;
 
   const LatLngBounds({
-    @required this.northeast,
-    @required this.southwest,
+    required this.northeast,
+    required this.southwest,
   })  : assert(northeast != null),
         assert(southwest != null);
 }

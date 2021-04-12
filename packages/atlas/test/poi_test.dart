@@ -6,7 +6,7 @@ main() {
     test('should throw AssertionError if latLng is null', () {
       try {
         Poi(
-          latLng: null,
+          latLng: null!,
         );
         fail('should throw AssertionError');
       } catch (error) {

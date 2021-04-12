@@ -6,7 +6,7 @@ main() {
     test('should throw AssertionError if id is null', () {
       try {
         Callout(
-          id: null,
+          id: null!,
           position: LatLng(
             latitude: 37.42796133580664,
             longitude: -122.085749655962,
@@ -20,7 +20,7 @@ main() {
 
     test('should throw AssertionError if position is null', () {
       try {
-        Callout(id: 'id', position: null);
+        Callout(id: 'id', position: null!);
         fail('should throw AssertionError');
       } catch (error) {
         expect(error, isAssertionError);
@@ -50,7 +50,7 @@ main() {
         latitude: 37.42796133580664,
         longitude: -122.085749655962,
       );
-      final expectedAnnotationType = null;
+      final dynamic expectedAnnotationType = null;
       final callout = Callout(
         id: expectedId,
         position: expectedPosition,
